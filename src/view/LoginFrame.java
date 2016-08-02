@@ -33,7 +33,7 @@ class LoginFrame extends JFrame implements ActionListener {
 		this.setLayout(null);
 		// 이미지 받아오기
 		try {
-			img = ImageIO.read(new File("img_test/a_background.png"));
+			img = ImageIO.read(new File("img/a_background.png"));
 		} catch (IOException e) {
 			System.out.println("이미지 불러오기 실패");
 			System.exit(0);
@@ -67,7 +67,7 @@ class LoginFrame extends JFrame implements ActionListener {
 		passwordField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		layeredPane.add(passwordField);
 		// 로그인 버튼 추가
-		bt = new JButton(new ImageIcon("img_test/a_signin.png"));
+		bt = new JButton(new ImageIcon("img/a_signin.png"));
 		bt.setBounds(10, 305, 280, 50);
 		// 회원가입 버튼 추가
 		bt1 = new JButton("SIGN IN~!");
