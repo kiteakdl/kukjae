@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import javax.swing.JComboBox;
 
-class DateJComboBox{
+public class DateJComboBox{
 	
 	//JComboBox ¼±¾ð
 	JComboBox<String> comboYear,comboMonth,comboDay;
