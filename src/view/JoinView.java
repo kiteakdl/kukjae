@@ -1,6 +1,9 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Insets;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -9,6 +12,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -37,7 +41,7 @@ public class JoinView{
 	private JPanel panel_accountInfo = new JPanel();
 	
     private JLabel label_id = new JLabel("아이디");
-    private JTextField field_id = new JTextField(16);
+    private JTextField field_id = new JTextField(8);
     private JLabel label_pw = new JLabel("비밀번호");
     private JPasswordField field_pw = new JPasswordField(16);
     private JLabel label_pw2 = new JLabel("비밀번호확인");
@@ -81,6 +85,8 @@ public class JoinView{
         JFrame f = new JFrame("회원가입");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.Y_AXIS));
+        f.setPreferredSize(new Dimension(300,450));
+//        f.setResizable(false);
         
         /*계정정보*/
         panel_accountInfo.setBorder(BorderFactory.createTitledBorder("계정정보"));
@@ -89,6 +95,13 @@ public class JoinView{
         layout.setAutoCreateGaps(true); //컴포넌트간의 간격 자동 설정
         layout.setAutoCreateContainerGaps(true); //컨테이너간의 간격 자동 설정
         
+        //중복확인 버튼 크기 감소를 위한 안쪽 여백 설정
+        btn_chk_id.setMargin(new Insets(0, 0, 0, 0));;
+        
+        JPanel panel_test = new JPanel();
+        field_id.setPreferredSize(new Dimension(80,20));
+        panel_test.add(field_id);
+        panel_test.add(btn_chk_id);
         
         //세로
         layout.setHorizontalGroup(layout.createSequentialGroup()
@@ -97,22 +110,22 @@ public class JoinView{
                 .addComponent(label_pw)
                 .addComponent(label_pw2))
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                .addComponent(field_id)            
+                .addComponent(panel_test)            
                 .addComponent(field_pw)
                 .addComponent(field_pw2))
-            	.addComponent(btn_chk_id)
+            	//.addComponent(btn_chk_id)
         );
         
         //가로
         layout.setVerticalGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label_id)
-                .addComponent(field_id)
-                .addComponent(btn_chk_id))
-            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(panel_test))
+               // .addComponent(btn_chk_id))
+            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label_pw)
                 .addComponent(field_pw))
-            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label_pw2)
                 .addComponent(field_pw2))
             
@@ -162,22 +175,22 @@ public class JoinView{
             
         //가로
         layout2.setVerticalGroup(layout2.createSequentialGroup()
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
 	                    .addComponent(label_name)
 	                    .addComponent(field_name))
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
                         .addComponent(label_sex)
                         .addComponent(panel_sex))
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
                         .addComponent(label_birth)
                         .addComponent(panel_birth))
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
                         .addComponent(label_email)
                         .addComponent(field_email))
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
                         .addComponent(label_phone)
                         .addComponent(field_phone))
-                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.CENTER)
                         .addComponent(label_addr)
                         .addComponent(field_addr_scroll))
             );
