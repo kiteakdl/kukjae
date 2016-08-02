@@ -45,7 +45,7 @@ class LoginFrame extends JFrame implements ActionListener {
 			g.drawImage(img, 0, 0, null);
 		}
 	}
-	public void init() {
+	public void init() {//
 		// 레이아웃 설정
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(0, 0, lay_w, lay_h);
