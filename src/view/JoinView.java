@@ -19,12 +19,12 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import controller.DateJComboBox
-;
+
+import controller.DateJComboBox;
 import controller.JoinActionListener;
 
 //300*400
-//Å©±â ¼öÁ¤ ºÒ°¡
+//í¬ê¸° ìˆ˜ì • ë¶ˆê°€
 
 class JoinMember_Excute3 {
 	public static void main(String[] args) {
@@ -33,64 +33,64 @@ class JoinMember_Excute3 {
 }
 
 public class JoinView{
-	/*°èÁ¤Á¤º¸ ÇÊµå ¼±¾ğ*/
+	/*ê³„ì •ì •ë³´ í•„ë“œ ì„ ì–¸*/
 	private JPanel panel_accountInfo = new JPanel();
 	
-    private JLabel label_id = new JLabel("¾ÆÀÌµğ");
+    private JLabel label_id = new JLabel("ì•„ì´ë””");
     private JTextField field_id = new JTextField(16);
-    private JLabel label_pw = new JLabel("ºñ¹Ğ¹øÈ£");
+    private JLabel label_pw = new JLabel("ë¹„ë°€ë²ˆí˜¸");
     private JPasswordField field_pw = new JPasswordField(16);
-    private JLabel label_pw2 = new JLabel("ºñ¹Ğ¹øÈ£È®ÀÎ");
+    private JLabel label_pw2 = new JLabel("ë¹„ë°€ë²ˆí˜¸í™•ì¸");
     private JPasswordField field_pw2 = new JPasswordField(16);
-    private JButton btn_chk_id = new JButton("Áßº¹È®ÀÎ");
+    private JButton btn_chk_id = new JButton("ì¤‘ë³µí™•ì¸");
 
-    /*»ó¼¼Á¤º¸ ÇÊµå ¼±¾ğ*/
+    /*ìƒì„¸ì •ë³´ í•„ë“œ ì„ ì–¸*/
 	private JPanel panel_basicInfo = new JPanel();
 	
-    private JLabel label_name = new JLabel("ÀÌ¸§");
+    private JLabel label_name = new JLabel("ì´ë¦„");
     private JTextField field_name = new JTextField(10);
     
-    private JLabel label_sex = new JLabel("¼ºº°");
+    private JLabel label_sex = new JLabel("ì„±ë³„");
     private JPanel panel_sex = new JPanel();
     private ButtonGroup bg_sex = new ButtonGroup();
-    private JRadioButton radio_sex_man = new JRadioButton("³²ÀÚ");
-    private JRadioButton radio_sex_woman = new JRadioButton("¿©ÀÚ");
+    private JRadioButton radio_sex_man = new JRadioButton("ë‚¨ì");
+    private JRadioButton radio_sex_woman = new JRadioButton("ì—¬ì");
     
-    private JLabel label_birth = new JLabel("»ıÀÏ");
+    private JLabel label_birth = new JLabel("ìƒì¼");
     private JPanel panel_birth = new JPanel();
     private DateJComboBox dt_combo = new DateJComboBox();
     private JComboBox<String> combo_year = dt_combo.getYear();
     private JComboBox<String> combo_month = dt_combo.getMonth();
     private JComboBox<String> combo_day = dt_combo.getDay();
     
-    private JLabel label_email = new JLabel("ÀÌ¸ŞÀÏ");
+    private JLabel label_email = new JLabel("ì´ë©”ì¼");
     private JTextField field_email = new JTextField(16);
-    private JLabel label_phone = new JLabel("ÈŞ´ëÀüÈ­¹øÈ£");
+    private JLabel label_phone = new JLabel("íœ´ëŒ€ì „í™”ë²ˆí˜¸");
     private JTextField field_phone = new JTextField(16);
     
-    private JLabel label_addr = new JLabel("ÁÖ¼Ò");
+    private JLabel label_addr = new JLabel("ì£¼ì†Œ");
     private JTextArea field_addr = new JTextArea();
     
-    /*ÇÏ´Ü ¹öÆ° ºÎºĞ  ÇÊµå ¼±¾ğ*/
+    /*í•˜ë‹¨ ë²„íŠ¼ ë¶€ë¶„  í•„ë“œ ì„ ì–¸*/
 	private JPanel panel_button = new JPanel();
-	private JButton btn_submit = new JButton("°¡ÀÔÇÏ±â");
-	private JButton btn_cancel = new JButton("Ãë¼Ò");
+	private JButton btn_submit = new JButton("ê°€ì…í•˜ê¸°");
+	private JButton btn_cancel = new JButton("ì·¨ì†Œ");
 	
     
     public JoinView() {
-        JFrame f = new JFrame("È¸¿ø°¡ÀÔ");
+        JFrame f = new JFrame("íšŒì›ê°€ì…");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.Y_AXIS));
         
-        /*°èÁ¤Á¤º¸*/
-        panel_accountInfo.setBorder(BorderFactory.createTitledBorder("°èÁ¤Á¤º¸"));
+        /*ê³„ì •ì •ë³´*/
+        panel_accountInfo.setBorder(BorderFactory.createTitledBorder("ê³„ì •ì •ë³´"));
         GroupLayout layout = new GroupLayout(panel_accountInfo);          
         panel_accountInfo.setLayout(layout);
-        layout.setAutoCreateGaps(true); //ÄÄÆ÷³ÍÆ®°£ÀÇ °£°İ ÀÚµ¿ ¼³Á¤
-        layout.setAutoCreateContainerGaps(true); //ÄÁÅ×ÀÌ³Ê°£ÀÇ °£°İ ÀÚµ¿ ¼³Á¤
+        layout.setAutoCreateGaps(true); //ì»´í¬ë„ŒíŠ¸ê°„ì˜ ê°„ê²© ìë™ ì„¤ì •
+        layout.setAutoCreateContainerGaps(true); //ì»¨í…Œì´ë„ˆê°„ì˜ ê°„ê²© ìë™ ì„¤ì •
         
         
-        //¼¼·Î
+        //ì„¸ë¡œ
         layout.setHorizontalGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                 .addComponent(label_id)
@@ -103,7 +103,7 @@ public class JoinView{
             	.addComponent(btn_chk_id)
         );
         
-        //°¡·Î
+        //ê°€ë¡œ
         layout.setVerticalGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                 .addComponent(label_id)
@@ -117,15 +117,15 @@ public class JoinView{
                 .addComponent(field_pw2))
             
         );
-        /*³¡ : °èÁ¤Á¤º¸*/
+        /*ë : ê³„ì •ì •ë³´*/
         
         
-        /*±âº»Á¤º¸*/
-        panel_basicInfo.setBorder(BorderFactory.createTitledBorder("±âº»Á¤º¸"));
+        /*ê¸°ë³¸ì •ë³´*/
+        panel_basicInfo.setBorder(BorderFactory.createTitledBorder("ê¸°ë³¸ì •ë³´"));
         GroupLayout layout2 = new GroupLayout(panel_basicInfo);          
         panel_basicInfo.setLayout(layout2);
-        layout2.setAutoCreateGaps(true); //ÄÄÆ÷³ÍÆ®°£ÀÇ °£°İ ÀÚµ¿ ¼³Á¤
-        layout2.setAutoCreateContainerGaps(true); //ÄÁÅ×ÀÌ³Ê°£ÀÇ °£°İ ÀÚµ¿ ¼³Á¤
+        layout2.setAutoCreateGaps(true); //ì»´í¬ë„ŒíŠ¸ê°„ì˜ ê°„ê²© ìë™ ì„¤ì •
+        layout2.setAutoCreateContainerGaps(true); //ì»¨í…Œì´ë„ˆê°„ì˜ ê°„ê²© ìë™ ì„¤ì •
     	
         bg_sex.add(radio_sex_man);
         bg_sex.add(radio_sex_woman);
@@ -140,9 +140,9 @@ public class JoinView{
     	field_addr.setColumns(25);
     	field_addr.setRows(2);
     	field_addr.setLineWrap (true);
-    	JScrollPane field_addr_scroll = new JScrollPane(field_addr); //ÁÖ¼Ò ÇÊµå Å©±â °íÁ¤À» À§ÇÑ ½ºÅ©·Ñ »ı¼º
+    	JScrollPane field_addr_scroll = new JScrollPane(field_addr); //ì£¼ì†Œ í•„ë“œ í¬ê¸° ê³ ì •ì„ ìœ„í•œ ìŠ¤í¬ë¡¤ ìƒì„±
     	
-    	//¼¼·Î
+    	//ì„¸ë¡œ
         layout2.setHorizontalGroup(layout2.createSequentialGroup()
                 .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.TRAILING)
                     .addComponent(label_name)
@@ -160,7 +160,7 @@ public class JoinView{
                     .addComponent(field_addr_scroll))
             );
             
-        //°¡·Î
+        //ê°€ë¡œ
         layout2.setVerticalGroup(layout2.createSequentialGroup()
                 .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
 	                    .addComponent(label_name)
@@ -181,16 +181,16 @@ public class JoinView{
                         .addComponent(label_addr)
                         .addComponent(field_addr_scroll))
             );
-        /*³¡ : »ó¼¼Á¤º¸*/
+        /*ë : ìƒì„¸ì •ë³´*/
         
-        /*ÇÏ´Ü ¹öÆ°*/
+        /*í•˜ë‹¨ ë²„íŠ¼*/
         FlowLayout layout3 = new FlowLayout();
         panel_button.add(btn_submit);
         panel_button.add(btn_cancel);
         panel_button.setLayout(layout3);
-        /*³¡ : ÇÏ´Ü ¹öÆ°*/
+        /*ë : í•˜ë‹¨ ë²„íŠ¼*/
         
-        /*¸®½º³Ê ¿¬°á*/
+        /*ë¦¬ìŠ¤ë„ˆ ì—°ê²°*/
         btn_chk_id.addActionListener(new JoinActionListener(this));
         btn_submit.addActionListener(new JoinActionListener(this));
         btn_cancel.addActionListener(new JoinActionListener(this));

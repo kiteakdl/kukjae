@@ -7,7 +7,7 @@ public class JoinCheckValidation {
 		boolean result = false;
 		
 		result = true;
-		//DB Äõ¸® Àü¼Û ¹× °ª ºñ±³
+		//DB ì¿¼ë¦¬ ì „ì†¡ ë° ê°’ ë¹„êµ
 		return result;
 	}
 	

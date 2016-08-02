@@ -7,7 +7,6 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import controller.JoinView;
 
 class LoginFrame extends JFrame implements ActionListener {
 	BufferedImage img = null;

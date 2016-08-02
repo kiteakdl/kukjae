@@ -36,47 +36,47 @@ public class JoinActionListener implements ActionListener{
 		
 		
 		switch (text) {
-		case "Áßº¹È®ÀÎ":
+		case "ì¤‘ë³µí™•ì¸":
 			
 			if(id.equals("")){
-				msg =  "ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä";
+				msg =  "IDë¥¼ ì…ë ¥í•˜ì„¸ìš”";
 			}else{
 				canUseID = chk.checkID();
-				//DB Äõ¸® Àü¼Û ¹× °ª ºñ±³
+				//DB ì¿¼ë¦¬ ì „ì†¡ ë° ê°’ ë¹„êµ
 				if(canUseID){
-					msg = "»ç¿ë °¡´ÉÇÑ IDÀÔ´Ï´Ù.";
+					msg = "ì‚¬ìš© ê°€ëŠ¥í•œ IDì…ë‹ˆë‹¤.";
 				}else{
-					msg = "ÀÌ¹Ì »ç¿ëÁßÀÎ IDÀÔ´Ï´Ù.";
+					msg = "ì´ë¯¸ ì‚¬ìš©ì¤‘ì¸ IDì…ë‹ˆë‹¤.";
 				}
 			}
 			JOptionPane.showMessageDialog(null, msg);
 			break;
 			
-		case "°¡ÀÔÇÏ±â":
+		case "ê°€ì…í•˜ê¸°":
 			boolean isPassed = false;
 			
 			if(id.length()==0){
-				msg =  "ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä.";
+				msg =  "IDë¥¼ ì…ë ¥í•˜ì„¸ìš”.";
 				form.getField_id().requestFocus();
 			}else if(pw.length()==0 || pw2.length()==0){
-				msg = "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.";
+				msg = "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.";
 				form.getField_pw().requestFocus();
 			}else if(!chk.checkPW(pw, pw2)){
-				msg = "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.";
+				msg = "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
 				form.getField_pw2().requestFocus();
 			}else if(!chk.checkID()){
-				msg = "ID Áßº¹ ¿©ºÎ È®ÀÎÀ» ÇØÁÖ¼¼¿ä.";
+				msg = "ID ì¤‘ë³µ ì—¬ë¶€ í™•ì¸ì„ í•´ì£¼ì„¸ìš”.";
 			}else{
 				isPassed = true;
 			}
 			
-			if(isPassed) msg = "È¯¿µÇÕ´Ï´Ù. °¡ÀÔµÇ¾ú½À´Ï´Ù.";
+			if(isPassed) msg = "í™˜ì˜í•©ë‹ˆë‹¤. ê°€ì…ë˜ì—ˆìŠµë‹ˆë‹¤.";
 			
 			JOptionPane.showMessageDialog(null, msg);
 			break;
 			
-		case "Ãë¼Ò":
-			int opCancel = JOptionPane.showConfirmDialog(null, "È¸¿ø°¡ÀÔÀ» Ãë¼ÒÇÏ½Ã°Ú½À´Ï±î?", "È¸¿ø°¡ÀÔ Ãë¼Ò", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+		case "ì·¨ì†Œ":
+			int opCancel = JOptionPane.showConfirmDialog(null, "íšŒì›ê°€ì…ì„ ì·¨ì†Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "íšŒì›ê°€ì… ì·¨ì†Œ", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 			if(opCancel==0){
 				System.exit(0);
 			}

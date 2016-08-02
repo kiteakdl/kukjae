@@ -6,26 +6,26 @@ import javax.swing.JComboBox;
 
 public class DateJComboBox{
 	
-	//JComboBox ¼±¾ğ
+	//JComboBox ì„ ì–¸
 	JComboBox<String> comboYear,comboMonth,comboDay;
 	
-	//³¯Â¥¹è¿­ ¼±¾ğ
-	ArrayList<String> yearArray; // ³âµµ
-	ArrayList<String> monthArray; // ¿ù
-	ArrayList<String> dayArray; // ÀÏ
+	//ë‚ ì§œë°°ì—´ ì„ ì–¸
+	ArrayList<String> yearArray; // ë…„ë„
+	ArrayList<String> monthArray; // ì›”
+	ArrayList<String> dayArray; // ì¼
 	
-	Calendar oCalendar = Calendar.getInstance( );  // ÇöÀç ³¯Â¥/½Ã°£ µîÀÇ °¢Á¾ Á¤º¸ ¾ò±â
+	Calendar oCalendar = Calendar.getInstance( );  // í˜„ì¬ ë‚ ì§œ/ì‹œê°„ ë“±ì˜ ê°ì¢… ì •ë³´ ì–»ê¸°
 	
-	//ÇöÀç ³¯Â¥
+	//í˜„ì¬ ë‚ ì§œ
 	int curYear = oCalendar.get(Calendar.YEAR);
 	int curMonth = oCalendar.get(Calendar.MONTH) + 1;
 	int curDay = oCalendar.get(Calendar.DAY_OF_MONTH);
 	
-	// ³âµµ
+	// ë…„ë„
 	public JComboBox<String> getYear(){
 		yearArray = new ArrayList<String>();
 		
-		//ÇöÀçºÎÅÍ -100³â±îÁö
+		//í˜„ì¬ë¶€í„° -100ë…„ê¹Œì§€
 		for(int i = curYear; i>= curYear -100; i--){
 			yearArray.add(String.valueOf(i));
 		}  
@@ -35,7 +35,7 @@ public class DateJComboBox{
 		return comboYear;
 	}
 
-	//¿ù
+	//ì›”
 	public JComboBox<String> getMonth(){
 		monthArray = new ArrayList<String>();
 		
@@ -49,7 +49,7 @@ public class DateJComboBox{
 		return comboMonth;
 	}
 	
-	//ÀÏ
+	//ì¼
 	public JComboBox<String> getDay(){
 		dayArray = new ArrayList<String>();
 	
@@ -62,7 +62,7 @@ public class DateJComboBox{
 		return comboDay;
 	}
 	
-	//ÇÑÀÚ¸® ¼ıÀÚ ¾Õ¿¡ + 0 ¿¹) 7ÀÏ -> 07ÀÏ 
+	//í•œìë¦¬ ìˆ«ì ì•ì— + 0 ì˜ˆ) 7ì¼ -> 07ì¼ 
 	private String addZeroString(int k){
 	     String value=Integer.toString(k);
 	     if(value.length()==1) {
