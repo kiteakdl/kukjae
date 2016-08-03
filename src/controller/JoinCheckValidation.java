@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.regex.Pattern;
+
 public class JoinCheckValidation {
 
 	
@@ -21,6 +23,22 @@ public class JoinCheckValidation {
 			result = false;
 		}
 		
+		return result;
+	}
+	
+	public boolean checkEmail(String email){
+		boolean result = false;
+		boolean isCorrect1 = Pattern.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+$", email);
+		boolean isCorrect2 = Pattern.matches("^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z-]+)*$", email);
+		
+		if(isCorrect1==true || isCorrect2==true){
+			result = true;
+		}
+		return result;
+	}
+	
+	public boolean checkPhone(String phone){
+		boolean result = Pattern.matches("[0-9]+", phone);
 		return result;
 	}
 }

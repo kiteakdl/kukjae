@@ -24,13 +24,13 @@ public class DateJComboBox{
 	// 년도
 	public JComboBox<String> getYear(){
 		yearArray = new ArrayList<String>();
-		
+		yearArray.add(0, "년");
 		//현재부터 -100년까지
 		for(int i = curYear; i>= curYear -100; i--){
 			yearArray.add(String.valueOf(i));
 		}  
 		comboYear= new JComboBox<String>(yearArray.toArray(new String[yearArray.size()]));
-		comboYear.setSelectedItem(String.valueOf(curYear));
+		comboYear.setSelectedItem(0);
 		
 		return comboYear;
 	}
@@ -38,13 +38,14 @@ public class DateJComboBox{
 	//월
 	public JComboBox<String> getMonth(){
 		monthArray = new ArrayList<String>();
-		
+		monthArray.add(0, "월");
+
 		for(int i = 1; i <= 12; i++){
 			monthArray.add(addZeroString(i));
 		}  
 		comboMonth = new JComboBox<String>(monthArray.toArray(new String[monthArray.size()]));
 		String mcom = curMonth >= 10?String.valueOf(curMonth):"0"+curMonth;
-		comboMonth.setSelectedItem(mcom);
+		comboMonth.setSelectedItem(0);
 
 		return comboMonth;
 	}
@@ -52,13 +53,14 @@ public class DateJComboBox{
 	//일
 	public JComboBox<String> getDay(){
 		dayArray = new ArrayList<String>();
-	
+		dayArray.add(0, "일");
+
 		for(int i = 1; i <= 31; i++){
 			dayArray.add(addZeroString(i));
 		}  
 		comboDay = new JComboBox<String>(dayArray.toArray(new String[dayArray.size()]));
 		String dcom = curDay >= 10?String.valueOf(curDay):"0"+curDay;
-		comboDay.setSelectedItem(dcom);
+		comboDay.setSelectedItem(0);
 		return comboDay;
 	}
 	

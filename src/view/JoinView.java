@@ -61,7 +61,7 @@ public class JoinView{
     private JLabel label_birth = new JLabel("생일");
     private JPanel panel_birth = new JPanel();
     private DateJComboBox dt_combo = new DateJComboBox();
-    private JComboBox<String> combo_year = dt_combo.getYear();
+	private JComboBox<String> combo_year = dt_combo.getYear();
     private JComboBox<String> combo_month = dt_combo.getMonth();
     private JComboBox<String> combo_day = dt_combo.getDay();
     
@@ -73,7 +73,8 @@ public class JoinView{
     private JLabel label_addr = new JLabel("주소");
     private JTextArea field_addr = new JTextArea();
     
-    /*하단 버튼 부분  필드 선언*/
+
+	/*하단 버튼 부분  필드 선언*/
 	private JPanel panel_button = new JPanel();
 	private JButton btn_submit = new JButton("가입하기");
 	private JButton btn_cancel = new JButton("취소");
@@ -234,5 +235,29 @@ public class JoinView{
 	}
 	public JFrame getJoinView(){
 		return f;
+	}
+    public JTextField getField_email() {
+		return field_email;
+	}
+    public JTextField getField_phone() {
+		return field_phone;
+	}
+    public JTextField getField_name() {
+		return field_name;
+	}
+    public JRadioButton getRadio_sex_man() {
+		return radio_sex_man;
+	}
+	public JRadioButton getRadio_sex_woman() {
+		return radio_sex_woman;
+	}
+	public JComboBox<String> getCombo_year() {
+		return combo_year;
+	}
+	public JComboBox<String> getCombo_month() {
+		return combo_month;
+	}
+	public JComboBox<String> getCombo_day() {
+		return combo_day;
 	}
 }
