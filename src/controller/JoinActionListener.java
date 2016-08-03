@@ -75,14 +75,17 @@ public class JoinActionListener implements ActionListener{
 				form.getField_pw2().requestFocus();
 			}else if(name.length()==0){
 				msg = "이름을 입력하세요.";
+				form.getField_name().requestFocus();
 			}else if(!sex_man&&!sex_woman){
 				msg = "성별을 선택해 주세요.";
 			}else if(year+month+day<3){
 				msg = "생일을 정확히 선택해 주세요.";		
 			}else if(!chk.checkEmail(email)){
 				msg = "정확한 이메일을 입력해 주세요.";
+				form.getField_email().requestFocus();
 			}else if(!chk.checkPhone(phone)){
 				msg = "휴대전화번호는 '-'없이 숫자만 입력해 주세요.";
+				form.getField_phone().requestFocus();
 			}else{
 				isPassed = true;
 			}
