@@ -1,18 +1,14 @@
 package view;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Insets;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -30,13 +26,15 @@ import controller.JoinActionListener;
 //300*400
 //크기 수정 불가
 
-class JoinMember_Excute3 {
+class JoinMember_Excute {
 	public static void main(String[] args) {
 		JoinView ex = new JoinView();
 	}
 }
 
 public class JoinView{
+	private JFrame f;
+	
 	/*계정정보 필드 선언*/
 	private JPanel panel_accountInfo = new JPanel();
 	
@@ -82,7 +80,7 @@ public class JoinView{
 	
     
     public JoinView() {
-        JFrame f = new JFrame("회원가입");
+        f = new JFrame("회원가입");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.Y_AXIS));
         f.setPreferredSize(new Dimension(300,450));
@@ -98,10 +96,10 @@ public class JoinView{
         //중복확인 버튼 크기 감소를 위한 안쪽 여백 설정
         btn_chk_id.setMargin(new Insets(0, 0, 0, 0));;
         
-        JPanel panel_test = new JPanel();
+        JPanel panel_id = new JPanel();
         field_id.setPreferredSize(new Dimension(80,20));
-        panel_test.add(field_id);
-        panel_test.add(btn_chk_id);
+        panel_id.add(field_id);
+        panel_id.add(btn_chk_id);
         
         //세로
         layout.setHorizontalGroup(layout.createSequentialGroup()
@@ -110,18 +108,16 @@ public class JoinView{
                 .addComponent(label_pw)
                 .addComponent(label_pw2))
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                .addComponent(panel_test)            
+                .addComponent(panel_id)            
                 .addComponent(field_pw)
                 .addComponent(field_pw2))
-            	//.addComponent(btn_chk_id)
         );
         
         //가로
         layout.setVerticalGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label_id)
-                .addComponent(panel_test))
-               // .addComponent(btn_chk_id))
+                .addComponent(panel_id))
             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
                 .addComponent(label_pw)
                 .addComponent(field_pw))
@@ -235,5 +231,8 @@ public class JoinView{
 
 	public JTextField getField_id() {
 		return field_id;
+	}
+	public JFrame getJoinView(){
+		return f;
 	}
 }

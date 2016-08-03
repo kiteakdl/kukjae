@@ -1,17 +1,13 @@
 package controller;
 
-import java.awt.BorderLayout;
-import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import view.JoinView;
+import view.LoginFrame;
 
 public class JoinActionListener implements ActionListener{
 	String id, pw, pw2 ;
@@ -70,18 +66,29 @@ public class JoinActionListener implements ActionListener{
 				isPassed = true;
 			}
 			
-			if(isPassed) msg = "환영합니다. 가입되었습니다.";
-			
-			JOptionPane.showMessageDialog(null, msg);
+			if(isPassed){
+				msg = "환영합니다. 가입되었습니다.";
+				JOptionPane.showMessageDialog(null, msg);
+				closeJoinView();
+			}else{
+				JOptionPane.showMessageDialog(null, msg);
+			}
 			break;
 			
 		case "취소":
 			int opCancel = JOptionPane.showConfirmDialog(null, "회원가입을 취소하시겠습니까?", "회원가입 취소", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 			if(opCancel==0){
-				System.exit(0);
+				closeJoinView();
 			}
 			break;
-		}
+		}//switch end
+		
+	}
+	
+	public void closeJoinView(){
+		form.getJoinView().dispose();
+		view.LoginFrame lf = new LoginFrame();
+		lf.getLoginFrame().setVisible(true);
 	}
 
 }
